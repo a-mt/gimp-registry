@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>#{(title ? title + ' | ' : '' )}Gimp-registry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="/public/style.css">
+  </head>
+  <body>
+    <main>
+      block content
+    </main>
+    <footer>
+        div(class="container")
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/node/25574">Help</a></li>
+            </ul>
+
+            if env.GITHUB_REPO
+              p(class="align-right") This site is open source.&nbsp;
+                a(href=env.GITHUB_REPO) Help improve this site
+    </footer>
+  </body>
+</html>

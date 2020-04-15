@@ -1,0 +1,139 @@
+
+/* LAYOUT */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Open Sans", sans;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main,
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+}
+main:first-child,
+h2 {
+    margin-top: 0;
+}
+footer {
+    background: #333;
+    color: white;
+    margin-top: 15px;
+}
+.align-right {
+    text-align: right;
+}
+footer a {
+    color: inherit;
+}
+
+/* BASIC FORMATTING */
+/* Table */
+.list {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 6px rgba(0,0,0,0.5);
+}
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+table th, table td {
+    border: 1px solid lightgray;
+    padding: 5px;
+}
+th {
+    background: #f5f5f5;
+}
+.view-glossary.view-display-id-attachment {
+    background: #f5f5f5;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+/* Node */
+.field-label-inline {
+    margin: 5px;
+    padding: 5px;
+}
+.field-label-inline > div {
+    display: inline;
+}
+.field-label {
+    font-weight: bold;
+}
+.field-label-inline .field-item {
+    display: inline;
+}
+.field-item:not(:last-child)::after {
+    content: ", ";
+}
+.field-type-taxonomy-term-reference {
+    background: #f5f5f5;
+    border-radius: 15px;
+    padding: 5px;
+}
+.node > .content {
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    margin-top: 15px;
+}
+
+/* Comments */
+#comments {
+    background: #f5f5f5;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+.comment:not(:first-of-type) {
+    border-top: 1px solid;
+    padding-top: 15px;
+}
+.submitted {
+    opacity: 0.3;
+}
+.indented {
+    border-left: 2px solid lightgray;
+    border-top: 0 !important;
+    margin-left: 10px;
+    margin-top: 15px;
+    font-size: 15px;
+    margin-bottom: 15px;
+    padding-left: 15px;
+}
+
+/* Page footer */
+.region-footer {
+    margin-top: 15px;
+}
+
+/* HIDE UNSUPPORTED FEATURES */
+.element-invisible,
+.breadcrumb,
+.form-item,
+.comment_forbidden,
+.pager,
+.feed-icon {
+  display: none;
+}
+
+#comments .permalink,
+.field-type-taxonomy-term-reference a {
+    pointer-events: none;
+    color: inherit;
+    text-decoration: none;
+}
