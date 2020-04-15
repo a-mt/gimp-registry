@@ -27,8 +27,11 @@ app.get('/index', function(req, res) { res.redirect('/'); });
 app.get('/glossary/:id', function(req, res, next){
     let file = GIMP + '/glossary/' + req.params.id;
 
+    if(req.query.page) {
+        file += '?page=' + req.query.page;
+    }
     if(!fs.existsSync(file)) {
-        return next();
+        return next(null);
     }
     fs.readFile(file, 'utf8', (err, text) => {
         let k = text.indexOf('<div id="center">');
@@ -36,6 +39,7 @@ app.get('/glossary/:id', function(req, res, next){
         text = text.substr(k);
         k    = text.indexOf('<div id="sidebar-second"');
         text = text.substr(0, k);
+        text = text.replace(/http:\/\/registry.gimp.org\//g, '/');
 
         res.render('html', {html: text, title: "Glossary: " + req.params.id});
     });
